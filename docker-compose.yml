@@ -11,8 +11,6 @@ services:
     command: npm run dev
   server:
     build: ./server
-    volumes:
-      - ./server:/app
     ports:
       - "3001:3001"
     command: npm run start
