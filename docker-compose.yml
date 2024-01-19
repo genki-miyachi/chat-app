@@ -2,9 +2,17 @@ version: '3'
 services:
   client:
     build: ./client
+    volumes:
+      - ./client:/app
     ports:
       - "3000:3000"
+    environment:
+      - WATCHPACK_POLLING=true
+    command: npm run dev
   server:
     build: ./server
+    volumes:
+      - ./server:/app
     ports:
       - "3001:3001"
+    command: npm run start
